@@ -9,10 +9,15 @@ namespace СheckLuckyTicket
         {
             while (true)
             {
-                Console.WriteLine("Please, enter number for cheking.");
-                int inputNumber = int.Parse(Console.ReadLine());
-
-                СheckLuckyTicket(inputNumber);
+                try { 
+                    Console.WriteLine("Please, enter number for cheking.");
+                    int inputNumber = int.Parse(Console.ReadLine());
+                    СheckLuckyTicket(inputNumber);
+                }
+                catch(FormatException e)
+                {
+                    Console.WriteLine(e.Message + "\n");
+                }
             }
         }
         private static void СheckLuckyTicket(int inputNumber)
@@ -68,6 +73,5 @@ namespace СheckLuckyTicket
 
             arrayNumber = newArray;
         }
-
     }
 }

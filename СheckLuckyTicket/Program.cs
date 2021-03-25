@@ -14,6 +14,10 @@ namespace СheckLuckyTicket
                     int inputNumber = int.Parse(Console.ReadLine());
                     СheckLuckyTicket(inputNumber);
                 }
+               catch (OverflowException e)
+                {
+                    Console.WriteLine(e.Message+"\n");
+                }
                 catch(FormatException e)
                 {
                     Console.WriteLine(e.Message + "\n");
